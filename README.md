@@ -1,5 +1,7 @@
 # Laravel DB Blade
 
+[![Build Status](https://travis-ci.org/kiroushi/laravel-db-blade.svg?branch=master)](https://travis-ci.org/kiroushi/laravel-db-blade)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kiroushi/laravel-db-blade/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kiroushi/laravel-db-blade/?branch=master)
 
 ## Render Blade templates from Eloquent Model Fields
 
