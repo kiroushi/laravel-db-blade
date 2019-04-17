@@ -2,7 +2,6 @@
 
 namespace Kiroushi\DbBlade\Compilers;
 
-use Illuminate\Config\Repository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\View\Compilers\BladeCompiler;
 use Illuminate\View\Compilers\CompilerInterface;

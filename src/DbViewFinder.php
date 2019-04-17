@@ -20,7 +20,7 @@ class DbViewFinder extends FileViewFinder
     {
         $this->modelName = $modelName;
         
-        if ($nameField) {
+        if ($nameField !== null) {
             $this->nameField = $nameField;
         }
     }
@@ -38,6 +38,7 @@ class DbViewFinder extends FileViewFinder
      */
     public function find($name)
     {
+        // To do: expose this callback.
         return ($this->modelName)::where($this->nameField, $name)->firstOrFail();
     }
 

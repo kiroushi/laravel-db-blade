@@ -15,7 +15,6 @@ class Factory extends ViewFactory
      *
      * @param  \Kiroushi\DbBlade\DbViewFinder  $finder
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events
-     * @return void
      */
     public function __construct(DbViewFinder $finder, Dispatcher $events)
     {
@@ -69,7 +68,7 @@ class Factory extends ViewFactory
      * Create a new view instance from the given arguments.
      *
      * @param  string  $view
-     * @param  string  $path
+     * @param  Model  $model
      * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
      * @return \Kiroushi\DbBlade\DbView
      */

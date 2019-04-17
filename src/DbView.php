@@ -2,11 +2,11 @@
 
 namespace Kiroushi\DbBlade;
 
-use View, Closure, ArrayAccess;
+use ArrayAccess;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Config\Repository;
 use Illuminate\Database\Eloquent\Model;
+use View;
 
 use Kiroushi\DbBlade\Compilers\DbBladeCompiler;
 use Kiroushi\DbBlade\Engines\DbBladeCompilerEngine;
@@ -25,7 +25,6 @@ class DbView extends \Illuminate\View\View implements ArrayAccess, Renderable
      * @param  Model  $model
      * @param  mixed  $data
      * @param  string|null  $contentField
-     * @return void
      */
     public function __construct(Factory $factory, $view, $model, $data = [], $contentField = null)
     { 

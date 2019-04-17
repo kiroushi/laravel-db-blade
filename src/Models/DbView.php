@@ -7,12 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class DbView extends Model
 {
 
-    /**
-     * Create a new Eloquent model instance.
-     *
-     * @param  array  $attributes
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct(...func_get_args());

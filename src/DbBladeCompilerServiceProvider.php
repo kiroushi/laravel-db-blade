@@ -6,7 +6,6 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\View\Engines\CompilerEngine;
 use Kiroushi\DbBlade\Compilers\DbBladeCompiler;
 
 class DbBladeCompilerServiceProvider extends ServiceProvider
@@ -60,7 +59,7 @@ class DbBladeCompilerServiceProvider extends ServiceProvider
 
             $cachePath = storage_path('app/db-blade/cache/views');
 
-            return new Compilers\DbBladeCompiler($app['files'], $cachePath);
+            return new DbBladeCompiler($app['files'], $cachePath);
 
         });
     }
@@ -95,7 +94,7 @@ class DbBladeCompilerServiceProvider extends ServiceProvider
      *
      * @param  \Kiroushi\DbBlade\DbViewFinder  $finder
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events
-     * @return \Kiroushi\DbBlade\Factory;
+     * @return \Kiroushi\DbBlade\Factory
      */
     protected function createFactory($finder, $events)
     {
@@ -129,7 +128,7 @@ class DbBladeCompilerServiceProvider extends ServiceProvider
     protected function getMigrationFileName(Filesystem $filesystem): string
     {
         $timestamp = date('Y_m_d_His');
-        
+
         return Collection::make($this->app->databasePath() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR)
             ->flatMap(function ($path) use ($filesystem) {
                 return $filesystem->glob($path . '*_create_db_views_table.php');
