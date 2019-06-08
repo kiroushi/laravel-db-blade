@@ -6,7 +6,6 @@ use Illuminate\View\FileViewFinder;
 
 class DbViewFinder extends FileViewFinder
 {
-
     protected $modelName = null;
     protected $nameField = null;
 
@@ -19,7 +18,7 @@ class DbViewFinder extends FileViewFinder
     public function model(string $modelName, string $nameField = null)
     {
         $this->modelName = $modelName;
-        
+
         if ($nameField !== null) {
             $this->nameField = $nameField;
         }
@@ -41,5 +40,4 @@ class DbViewFinder extends FileViewFinder
         // To do: expose this callback.
         return ($this->modelName)::where($this->nameField, $name)->firstOrFail();
     }
-
 }

@@ -2,18 +2,16 @@
 
 namespace Kiroushi\DbBlade;
 
+use View;
 use ArrayAccess;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Database\Eloquent\Model;
-use View;
-
 use Kiroushi\DbBlade\Compilers\DbBladeCompiler;
 use Kiroushi\DbBlade\Engines\DbBladeCompilerEngine;
 
 class DbView extends \Illuminate\View\View implements ArrayAccess, Renderable
 {
-
     protected $contentField = null;
     protected $model = null;
 
@@ -27,14 +25,14 @@ class DbView extends \Illuminate\View\View implements ArrayAccess, Renderable
      * @param  string|null  $contentField
      */
     public function __construct(Factory $factory, $view, $model, $data = [], $contentField = null)
-    { 
+    {
         $this->view = $view;
         $this->path = $view;
         $this->model = $model;
         $this->engine = new DbBladeCompilerEngine(app(DbBladeCompiler::class));
         $this->factory = $factory;
 
-        if (!is_null($contentField)) {
+        if (! is_null($contentField)) {
             $this->contentField = $contentField;
         } else {
             $this->contentField = config('db-blade.content_field');
@@ -56,6 +54,4 @@ class DbView extends \Illuminate\View\View implements ArrayAccess, Renderable
 
         return $this->engine->get($this->model, $this->gatherData());
     }
-
 }
-
