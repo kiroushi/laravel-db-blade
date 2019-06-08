@@ -6,7 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateDbViewsTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -31,5 +30,4 @@ class CreateDbViewsTable extends Migration
     {
         Schema::dropIfExists(config('db-blade.table_name'));
     }
-
 }

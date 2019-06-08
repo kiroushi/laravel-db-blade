@@ -4,8 +4,8 @@ namespace Kiroushi\DbBlade\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class DbView extends Facade {
-
+class DbView extends Facade
+{
     /**
      * Get the registered name of the component.
      *
@@ -15,5 +15,4 @@ class DbView extends Facade {
     {
         return 'dbview';
     }
-
 }

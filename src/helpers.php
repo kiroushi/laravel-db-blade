@@ -14,12 +14,11 @@ if (! function_exists('dbview')) {
     function dbview($view = null, $data = [], $mergeData = [])
     {
         $factory = app('dbview');
-        
+
         if (func_num_args() === 0) {
             return $factory;
         }
 
         return $factory->make($view, $data, $mergeData);
     }
-
 }

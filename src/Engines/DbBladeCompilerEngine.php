@@ -3,12 +3,10 @@
 namespace Kiroushi\DbBlade\Engines;
 
 use Illuminate\View\Engines\CompilerEngine;
-
 use Kiroushi\DbBlade\Compilers\DbBladeCompiler;
 
 class DbBladeCompilerEngine extends CompilerEngine
 {
-
     /**
      * Create a new DbView engine instance.
      *
@@ -18,5 +16,4 @@ class DbBladeCompilerEngine extends CompilerEngine
     {
         $this->compiler = $compiler;
     }
-
 }

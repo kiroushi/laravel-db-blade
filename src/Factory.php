@@ -2,12 +2,11 @@
 
 namespace Kiroushi\DbBlade;
 
-use Illuminate\Contracts\Events\Dispatcher as Dispatcher;
 use Illuminate\View\Factory as ViewFactory;
+use Illuminate\Contracts\Events\Dispatcher as Dispatcher;
 
 class Factory extends ViewFactory
 {
-
     protected $contentField = null;
 
     /**
@@ -26,7 +25,7 @@ class Factory extends ViewFactory
 
     /**
      * Set the DB View model and its name field at run time.
-     * 
+     *
      * @param string $modelName
      * @param string|null $nameField
      * @return $this
@@ -40,7 +39,7 @@ class Factory extends ViewFactory
 
     /**
      * Set the model name field at run time.
-     * 
+     *
      * @param string $nameField
      * @return $this
      */
@@ -53,7 +52,7 @@ class Factory extends ViewFactory
 
     /**
      * Set the content field at run time.
-     * 
+     *
      * @param string $contentField
      * @return $this
      */
@@ -76,5 +75,4 @@ class Factory extends ViewFactory
     {
         return new DbView($this, $view, $model, $data, $this->contentField);
     }
-
 }
